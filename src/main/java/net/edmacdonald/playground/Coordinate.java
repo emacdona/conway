@@ -17,12 +17,25 @@ public class Coordinate {
         this.y = y;
     }
 
-    public Set<Coordinate> getNeighborsAndSelf() {
+    public Set<Coordinate> getNeighbors() {
         Set<Coordinate> neighbors = new HashSet<Coordinate>();
         for(Pair<Integer, Integer> delta : new PermutationBuilder<Integer>(deltas).getPermutation()){
             neighbors.add(new Coordinate(x + delta.first.intValue(), y + delta.second.intValue()));
         }
+        neighbors.remove(new Coordinate(x, y));
         return neighbors;
+    }
+
+    public boolean correctAmountOfNeighborsToLive(Set<Coordinate> livingCells) {
+        Set<Coordinate> neighbors = getNeighbors();
+        neighbors.retainAll(livingCells);
+        return neighbors.size() == 2 || neighbors.size() == 3;
+    }
+
+    public boolean correctAmountOfNeighborsToConcieve(Set<Coordinate> livingCells){
+        Set<Coordinate> neighbors = getNeighbors();
+        neighbors.retainAll(livingCells);
+        return neighbors.size() == 3;
     }
 
     @Override

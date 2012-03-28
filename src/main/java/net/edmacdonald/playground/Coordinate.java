@@ -1,10 +1,7 @@
 package net.edmacdonald.playground;
 
-import com.google.common.collect.Collections2;
-
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Coordinate {
@@ -19,7 +16,7 @@ public class Coordinate {
 
     public Set<Coordinate> getNeighbors() {
         Set<Coordinate> neighbors = new HashSet<Coordinate>();
-        for(Pair<Integer, Integer> delta : new PermutationBuilder<Integer>(deltas).getPermutation()){
+        for(Pair<Integer, Integer> delta : new CrossProductBuilder<Integer>(deltas).getCrossProduct()){
             neighbors.add(new Coordinate(x + delta.first.intValue(), y + delta.second.intValue()));
         }
         neighbors.remove(new Coordinate(x, y));

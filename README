@@ -1,0 +1,14 @@
+Prerequisites:
+java
+maven
+
+Instructions:
+build
+run exhibitA
+
+You can run the other input files too.
+
+Note that I use some unix-y shenanigans to clear the screen, so
+YMMV if you're running this from the windows shell.
+
+You're probably okay if you're on Cygwin.

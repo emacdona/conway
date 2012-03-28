@@ -12,6 +12,7 @@ public class App
     {
         int width = 80;
         int height = 40;
+        int generation = 0;
 
         Board conway;
 
@@ -28,6 +29,7 @@ public class App
         try{
             do{
                 System.out.print(ESC + "2J"); System.out.flush();
+                System.out.println("Generation: " + generation++);
                 System.out.println("Living Cell Count: " + conway.getLivingCells().size());
                 conwayRenderer.renderGridModel(AsciiStateTransformer.getModelFromCoordinates(conway.getLivingCells()), width, height);
                 conway.tick();

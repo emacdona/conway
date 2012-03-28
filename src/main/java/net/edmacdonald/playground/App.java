@@ -13,8 +13,6 @@ public class App
         int width = 80;
         int height = 40;
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
         Board conway;
 
         try{
@@ -23,19 +21,18 @@ public class App
         catch (Exception e){
             throw new RuntimeException("Did you specify an input file you can read from?", e);
         }
+
         GridModelRenderer conwayRenderer = new GridModelRenderer();
 
-        conwayRenderer.renderGridModel(AsciiStateTransformer.getModelFromCoordinates(conway.getLivingCells()), width, height);
 
         try{
-            //while(in.readLine() != null){
-            while(true){
-                Thread.sleep(200);
+            do{
                 System.out.print(ESC + "2J"); System.out.flush();
-                conway.tick();
                 System.out.println("Living Cell Count: " + conway.getLivingCells().size());
                 conwayRenderer.renderGridModel(AsciiStateTransformer.getModelFromCoordinates(conway.getLivingCells()), width, height);
-            }
+                conway.tick();
+                Thread.sleep(200);
+            } while(true);
         }
         catch (Exception e){
             throw new RuntimeException(e);

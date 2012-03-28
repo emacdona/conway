@@ -33,6 +33,7 @@ public class App
                 Thread.sleep(200);
                 System.out.print(ESC + "2J"); System.out.flush();
                 conway.tick();
+                System.out.println("Living Cell Count: " + conway.getLivingCells().size());
                 conwayRenderer.renderGridModel(AsciiStateTransformer.getModelFromCoordinates(conway.getLivingCells()), width, height);
             }
         }

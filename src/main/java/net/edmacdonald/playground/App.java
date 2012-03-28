@@ -10,7 +10,7 @@ public class App
 
     public static void main( String[] args )
     {
-        int width = 40;
+        int width = 80;
         int height = 40;
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));

@@ -15,7 +15,14 @@ public class App
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-        Board conway = new Board(AsciiStateTransformer.getCoordinatesFromFile(args[0]));
+        Board conway;
+
+        try{
+            conway = new Board(AsciiStateTransformer.getCoordinatesFromFile(args[0]));
+        }
+        catch (Exception e){
+            throw new RuntimeException("Did you specify an input file you can read from?", e);
+        }
         GridModelRenderer conwayRenderer = new GridModelRenderer();
 
         conwayRenderer.renderGridModel(AsciiStateTransformer.getModelFromCoordinates(conway.getLivingCells()), width, height);

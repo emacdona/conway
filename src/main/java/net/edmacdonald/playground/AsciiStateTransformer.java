@@ -23,12 +23,6 @@ public class AsciiStateTransformer {
      * @return
      */
     public static Set<Coordinate> getCoordinatesForState(List<String> state){
-        int height = state.size();
-        int length = 0;
-        for(String s : state){
-            length = s.length() > length ? s.length() : length;
-        }
-
         Set<Coordinate> coordinates = new HashSet<Coordinate>();
         int x=0;
         int y=0;

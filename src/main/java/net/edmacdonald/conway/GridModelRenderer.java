@@ -1,4 +1,4 @@
-package net.edmacdonald.playground;
+package net.edmacdonald.conway;
 
 
 import org.apache.commons.lang.StringUtils;

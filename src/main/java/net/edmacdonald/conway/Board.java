@@ -1,9 +1,8 @@
-package net.edmacdonald.playground;
+package net.edmacdonald.conway;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 

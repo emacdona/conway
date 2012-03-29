@@ -1,4 +1,4 @@
-package net.edmacdonald.playground;
+package net.edmacdonald.conway;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;

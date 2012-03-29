@@ -1,4 +1,4 @@
-package net.edmacdonald.playground;
+package net.edmacdonald.conway;
 
 import java.util.HashSet;
 import java.util.Iterator;

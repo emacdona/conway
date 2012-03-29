@@ -1,4 +1,4 @@
-package net.edmacdonald.playground;
+package net.edmacdonald.conway;
 
 public class Pair<A,B> {
     public A first;

@@ -1,8 +1,4 @@
-package net.edmacdonald.playground;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+package net.edmacdonald.conway;
 
 public class App
 {

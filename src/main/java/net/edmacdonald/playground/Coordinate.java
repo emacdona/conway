@@ -16,7 +16,7 @@ public class Coordinate {
 
     public Set<Coordinate> getNeighbors() {
         Set<Coordinate> neighbors = new HashSet<Coordinate>();
-        for(Pair<Integer, Integer> delta : new CrossProductBuilder<Integer>(deltas).getCrossProduct()){
+        for(Pair<Integer, Integer> delta : new CrossProduct<Integer>(deltas)){
             neighbors.add(new Coordinate(x + delta.first.intValue(), y + delta.second.intValue()));
         }
         neighbors.remove(new Coordinate(x, y));
